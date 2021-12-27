@@ -2,6 +2,7 @@
 <div>
     <!--top-->
     <div class="top" style="text-align:center">
+            
         <h1>마이페이지</h1>
     </div>
     <div class="container">
@@ -20,7 +21,7 @@
             <div class="Check">
                 <li>회원정보 수정</li>
             </div>
-            <button>로그아웃</button>
+            <router-link v-bind:to="'/'"> <button class="logoutbtn" @click="logout"> 로그아웃 </button></router-link>
         </div>
         <!--right-->
         <div class="right">
@@ -49,7 +50,7 @@
                             </select>월
                             <select>
                                 <option>1</option>
-                            </select>일
+                            </select>일 ~
                             <select>
                                 <option>2021</option>
                             </select>년
@@ -143,42 +144,63 @@
 
 <script>
 export default {
+    method:{
 
+}
 }
 </script>
 
 <style scoped>
+h1{
+    font-size: 32px;
+}
+h2{
+    font-size: 22px;
+}
+h3{
+    font-size: 18px;
+}
+p, label, span{
+    font-size: 16px;
+}
 .top {
-    border-bottom: 1px solid black;
+    margin-left: 70px;
 }
 
 .container {
     display: flex;
+    border:none;
 }
 
 .left {
     display: inline-block;
-    border: 1px black solid;
+    border: 1px solid rgb(197, 195, 195);
+    background-color: #fafafa;
+    border-radius: 4px;
 }
 
 .right {
     display: inline-block;
     width: 85%;
-    margin-left: 20px;
+    border: 1px solid rgb(197, 195, 195);
+    margin-left: 50px;
+    background-color: #fafafa;
+    border-radius: 4px;
 }
 
 .pList1,
 .pList2,
 .pList3 {
     text-align: center;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(197, 195, 195);
+    
 }
 
 .date1,
 .date2,
 .date3 {
     display: flex;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(197, 195, 195);
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -187,13 +209,19 @@ export default {
     margin-left: auto;
     margin-right: auto;
     display: flex;
+    
 }
 
 .tables_header {
+    width: 100px;
     padding: 10px;
     text-align: center;
     line-height: 84px;
     font-weight: bold;
+    border: 1px solid;
+    border-radius: 4px;
+     background-color: #00ba54;;
+     color: white;
 }
 
 .row1,
@@ -201,10 +229,12 @@ export default {
     margin-left: auto;
     margin-right: auto;
     padding: 5px 15px;
+    border-radius: 4px;
 }
 
 .row2 {
     text-align: center;
+    
 }
 
 .row3 {
@@ -213,8 +243,11 @@ export default {
 }
 
 .searchBar {
+    width: 300px;
     margin-left: auto;
     margin-right: 1px;
+    border-radius: 4px;
+    border: 1px solid;
 }
 
 .searchBtn {
@@ -236,21 +269,23 @@ export default {
     border-collapse: collapse;
     padding: 10px 10px;
     text-align: center;
+    
 }
 
 .table2 td,
 .table3 td {
     border: 1px black solid;
     padding: 5px 5px;
+    
 }
 
 .left>div {
-    border-bottom: 1px solid black;
+   border-bottom: 1px solid rgb(197, 195, 195);
 }
 
 .List {
     text-align: center;
-    padding-top: 10px;
+    padding-top: 15px;
     padding-bottom: 10px;
 }
 
@@ -278,5 +313,12 @@ export default {
     cursor: pointer;
     margin: 0px 1px;
     margin: 0px 5px;
+    
 }
+
+.logoutbtn{
+    margin-top: 300px;
+    margin-left: 35px;
+}
+
 </style>
