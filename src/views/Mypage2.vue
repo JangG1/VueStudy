@@ -2,6 +2,7 @@
 <div>
     <!--top-->
   <div class="top" style="text-align:center">
+           <router-link v-bind:to="'/'"> <img src="@/assets/logo.jpg" alt="logo"></router-link>
         <h1>마이페이지</h1>
     </div>
     <!--left-->
@@ -20,7 +21,7 @@
             <div class="check">
                 <li>회원정보 수정</li>
             </div>
-            <button>로그아웃</button>
+            <router-link v-bind:to="'/'"> <button class="logoutbtn">로그아웃</button></router-link>
         </div>
         <!--right-->
         <div class="right">
@@ -30,42 +31,43 @@
             <div class="content">
                 <h3>
                     닉네임
-                </h3>
-                <input type="text" class="mdText">
+                <input type="text" class="mdText" id="m1">
                 <button class="mdBtn"> 수정하기 </button>
+                </h3>
             </div>
             <div class="content">
                 <h3>
                     비밀번호
-                </h3>
-                <input type="text" class="mdText">
+                <input type="text" class="mdText" id="m2">
                 <button class="mdBtn"> 수정하기 </button>
+                </h3>
                 <br>
             </div>
             <div class="content">
                 <h3>
                     연락처
-                </h3>
-                <input type="text" class="mdText">
+                <input type="text" class="mdText" id="m3">
                 <button class="mdBtn"> 수정하기 </button>
+                </h3>
             </div>
             <div class="content">
                 <h3>
                     주소
-                </h3>
-                <input type="text" class="mdText">
+                
+                <input type="text" class="mdText" id="m4">
                 <button class="mdBtn"> 주소조회 </button>
+                </h3>
             </div>
             <div class="content">
                 <h3>
                     <label>상세주소</label>
-                </h3>
-                <input type="text" class="mdText">
+                
+                <input type="text" class="mdText" id="m5">
                 <button class="mdBtn"> 수정하기 </button>
-
+                </h3>
             </div>
             <div class="content">
-                <button class="quit"> 회원탈퇴 </button>
+                <router-link v-bind:to="'/'"> <button class="quit">회원탈퇴</button></router-link>
             </div>
         </div>
     </div>
@@ -77,27 +79,48 @@ export default {}
 </script>
 
 <style scoped>
-.top{
-    border-bottom: 1px solid black;
+h1{
+    font-size: 32px;
 }
-
+h2{
+    font-size: 22px;
+}
+h3{
+    font-size: 18px;
+}
+p, label, span{
+    font-size: 16px;
+}
+.top {
+    margin-left: 70px;
+}
 .container {
     display: flex;
 }
 
 .left {
     display: inline-block;
-
-    border: 1px solid black;
+    border: 1px solid rgb(197, 195, 195);
+    background-color: #fafafa;
+    border-radius: 4px;
 }
 
-.left > div{
-      border-bottom: 1px solid black;
+.left>div {
+   border-bottom: 1px solid rgb(197, 195, 195);
 }
+
 
 .right {
     display: inline-block;
     width: 85%;
+    border: 1px solid rgb(197, 195, 195);
+    margin-left: 50px;
+    background-color: #fafafa;
+    border-radius: 4px;
+}
+
+.right>div {
+   border-bottom: 1px solid rgb(197, 195, 195);
 }
 
 .List {
@@ -124,13 +147,19 @@ export default {}
 
 
 .content {
-    text-align: center;
-       border-bottom: 1px solid black;
-       padding: 10px;
+    padding: 10px;
+}
+.content>h3 {
+ margin-left: 150px;
 }
 
+
 .mdText {
-    margin-right: 15px;
+    width: 300px;
+    margin-left: 30px;
+    border-radius: 4px;
+    border: 1px solid;
+
 }
 
 .mdBtn {
@@ -144,7 +173,32 @@ export default {}
     display: inline-block;
     font-size: 13px;
     cursor: pointer;
-    margin: 0px 1px;
-    margin: 0px 5px;
+    margin-left: 20px;
+}
+
+.logoutbtn{
+    margin-top: 300px;
+    margin-left: 35px;
+}
+
+.quit{
+   background-color: #00ba54;
+   margin-left: 360px;
+}
+
+#m1{
+  margin-left: 47px;
+}
+#m2{
+    margin-left: px;
+}
+#m3{
+    margin-left: 47px;
+}
+#m4{
+    margin-left: 65px;
+}
+#m5{
+    margin-left: 45px;
 }
 </style>
